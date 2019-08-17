@@ -5,16 +5,18 @@
 #Use esta área para incluir as configurações para ambiente de desenvolvimento (sem perfil definido).
 server:
   port: 8080
-  contextPath: /uaa
+#  contextPath: /uaa
 
 spring:
   jpa:
-    database-platform: H2
-  jdbc:
-    driverClassName: ${configurations.db.driverClassName}
-    url: ${configurations.db.url}
-    user: ${configurations.db.user}
-    pass: ${configurations.db.pass}
+    database-platform: ${spring.jpa.database-platform}
+    ddl-auto: ${spring.jpa.ddl-auto}
+    properties.hibernate.hbm2ddl.import_files: ${spring.jpa.properties.hibernate.hbm2ddl.import_files}
+  datasource:
+    driverClassName: ${spring.datasource.driver-class-name}
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
 
   mail:
     host: smtp.gmail.com
@@ -27,6 +29,12 @@ configurations.authentication-server:
   redirecturl: http://localhost:3000
   url: http://localhost:8080/uaa
 
+# JWT
+jwt:
+  secret: user_secret
+# expiration 7 days
+  expiration: 604800
+  
 ---
 
 #Use esta área para incluir as configurações para ambiente de teste.

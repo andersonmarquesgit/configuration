@@ -7,11 +7,38 @@
 configurations:
   typeconfig: Esse é uma configuração global para o ambiente de desenvolvimento.
 
-#configurations.mysqldb:
-#  driverClassName: com.mysql.cj.jdbc.Driver
-#  url: jdbc:mysql://localhost:3306/microservices?useSSL=false
-#  user: microservices
-#  pass: microservices@2018
+#Propriedades do banco de dados H2
+spring.h2.console.enabled: true
+spring.h2.path: h2
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    ddl-auto: create
+    properties.hibernate.hbm2ddl.import_files: scripts/create_data.sql
+  datasource:
+    url: jdbc:h2:~/db-h2/userDB
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+#Propriedades do banco de dados MySQL
+#spring:
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    ddl-auto: create
+#    properties.hibernate.hbm2ddl.import_files: scripts/create_data.sql
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/userDB
+#    username: root
+#    password: user123
+#    driver-class-name: com.mysql.jdbc.Driver
+
+configurations.mysqldb:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/microservices?useSSL=false
+  user: microservices
+  pass: microservices@2018
 
 ---
 
