@@ -1,0 +1,40 @@
+#Microservice authentication-server Configurations
+
+#Tudo que for configurado nesta área vale para todos os perfis de start de aplicação.
+
+#Use esta área para incluir as configurações para ambiente de desenvolvimento (sem perfil definido).
+server:
+  port: 8080
+  contextPath: /uaa
+
+spring:
+  jpa:
+    database-platform: H2
+  jdbc:
+    driverClassName: ${configurations.db.driverClassName}
+    url: ${configurations.db.url}
+    user: ${configurations.db.user}
+    pass: ${configurations.db.pass}
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+
+configurations.authentication-server:
+  redirecturl: http://localhost:3000
+  url: http://localhost:8080/uaa
+
+---
+
+#Use esta área para incluir as configurações para ambiente de teste.
+spring:
+  profiles: staging  
+  
+---
+
+#Use esta área para incluir as configurações para ambiente de produção.
+spring:
+  profiles: production  

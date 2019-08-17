@@ -1,0 +1,32 @@
+#Global configurations
+
+#Tudo que for configurado nesta área vale para todos os perfis de start de aplicação.
+
+#Use esta área para incluir as configurações para ambiente de desenvolvimento (sem perfil definido).
+
+configurations:
+  typeconfig: Esse é uma configuração global para o ambiente de desenvolvimento.
+
+#configurations.mysqldb:
+#  driverClassName: com.mysql.cj.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/microservices?useSSL=false
+#  user: microservices
+#  pass: microservices@2018
+
+---
+
+#Use esta área para incluir as configurações para ambiente de teste.
+spring:
+  profiles: staging  
+
+configurations:
+  typeconfig: Esse é uma configuração global para o ambiente de staging.
+
+---
+
+#Use esta área para incluir as configurações para ambiente de produção.
+spring:
+  profiles: production  
+
+configurations:
+  typeconfig: Esse é uma configuração global para o ambiente de produção.
