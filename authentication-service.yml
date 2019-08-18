@@ -7,6 +7,9 @@ server:
   port: 8080
 #  contextPath: /uaa
 
+spring.h2.console.enabled: true
+spring.h2.path: /h2
+
 spring:
   jpa:
     database-platform: ${spring.jpa.database-platform}
@@ -34,7 +37,7 @@ jwt:
   secret: user_secret
 # expiration 7 days
   expiration: 604800
-  
+
 ---
 
 #Use esta área para incluir as configurações para ambiente de teste.

@@ -8,9 +8,6 @@ configurations:
   typeconfig: Esse é uma configuração global para o ambiente de desenvolvimento.
 
 #Propriedades do banco de dados H2
-spring.h2.console.enabled: true
-spring.h2.path: /h2
-
 spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
