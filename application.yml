@@ -9,7 +9,7 @@ configurations:
 
 #Propriedades do banco de dados H2
 spring.h2.console.enabled: true
-spring.h2.path: h2
+spring.h2.path: /h2
 
 spring:
   jpa:
@@ -33,12 +33,6 @@ spring:
 #    username: root
 #    password: user123
 #    driver-class-name: com.mysql.jdbc.Driver
-
-configurations.mysqldb:
-  driverClassName: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/microservices?useSSL=false
-  user: microservices
-  pass: microservices@2018
 
 ---
 
