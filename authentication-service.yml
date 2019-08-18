@@ -7,9 +7,12 @@ server:
   port: 8080
 #  contextPath: /uaa
 
-spring.h2.console.enabled: true
-spring.h2.path: /h2
-
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      
 spring:
   jpa:
     database-platform: ${spring.jpa.database-platform}
